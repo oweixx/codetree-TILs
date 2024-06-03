@@ -21,11 +21,11 @@ for i in lst :
         elif len(stack) != 0 and stack[-1] != i :
             stack.append(i)
     
-    if stack and stack[-1] == i:
-        continue
-    
     elif i != 0 :
-        stack.append(i)
-    #print(stack)
+        if len(stack) == 0 :
+            stack.append(i)
+        elif stack[-1] != i :
+            stack.append(i)
 
+    #print(stack, count)
 print(count + len(stack))

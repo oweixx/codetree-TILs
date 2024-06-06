@@ -38,11 +38,13 @@ for i in range(n) :
     for j in range(m) :
         if not maps[i][j] :
             temp = 1
-            check = [False]*len(sum_count)
+            s = set()
             for nx, ny in [(i-1,j), (i+1,j), (i,j-1), (i,j+1)] :
-                if 0<=nx<n and 0<=ny<m and maps[nx][ny] and not check[maps[nx][ny]] :
-                    temp += sum_count[maps[nx][ny]]
-                    check[maps[nx][ny]] = True
+                if 0<=nx<n and 0<=ny<m and maps[nx][ny] :
+                    s.add(maps[nx][ny])
+            
+            for x in s :
+                temp += sum_count[x]
             new_count.append(temp)
             
 

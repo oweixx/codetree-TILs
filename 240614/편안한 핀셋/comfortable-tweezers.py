@@ -1,0 +1,19 @@
+n = int(input())
+check = [[0]*1001 for _ in range(1001)]
+
+count = 0
+for i in range(n) :
+    a, b = map(int,input().split())
+    for x,y in [(-1,0), (1,0), (0,-1), (0,1)] :
+        nx,ny = a + x, b + y
+        if 0<=nx<=1000 and 0<=ny<=1000 :
+            check[nx][ny] += 1
+            if check[nx][ny] == 3 :
+                count += 1
+            if check[nx][ny] > 3 : 
+                count -= 1
+    if check[a][b] == 3 :
+        count += 1
+    elif check[a][b] >= 4 :
+        count -= 1
+    print(count)

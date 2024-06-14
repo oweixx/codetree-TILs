@@ -12,8 +12,4 @@ for i in range(n) :
                 count += 1
             if check[nx][ny] > 3 : 
                 count -= 1
-    if check[a][b] == 3 :
-        count += 1
-    elif check[a][b] >= 4 :
-        count -= 1
     print(count)
